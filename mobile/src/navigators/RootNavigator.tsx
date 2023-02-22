@@ -1,9 +1,10 @@
-import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OpeningScreen from '$screens/Opening';
 import LoginScreen from '$screens/Login';
 import TabNavigator from '$navigators/TabNavigator';
-
+import ForgotPassword from '$screens/ForgotPassword';
+import Signup1 from '../screens/signup/Signup1';
+import HomeScreen from '../screens/main/Home';
 
 const RootStack = createNativeStackNavigator()
 
@@ -13,7 +14,11 @@ const RootNavigator = () => {
             <RootStack.Group>
                 <RootStack.Screen name="Opening" component={OpeningScreen}/>
                 <RootStack.Screen name="Login" component={LoginScreen}/>
+                <RootStack.Screen name="ForgotPassword" component={ForgotPassword}/>
+                <RootStack.Screen name="Signup1" component={Signup1}/>
                 <RootStack.Screen name="Main" component={TabNavigator}/>
+                <RootStack.Screen name="Home" component={HomeScreen}/>
+
             </RootStack.Group>
         </RootStack.Navigator>
     );

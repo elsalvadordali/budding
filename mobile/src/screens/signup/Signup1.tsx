@@ -1,14 +1,12 @@
 
 
-import { Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native"
+import { SafeAreaView } from "react-native"
 import { useState } from "react"
-import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText } from '../styles/elements'
-import { Centered, CenteredCol, FlexCol, FlexRow, RowEnd, Spaced } from '../styles/containers'
+import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText } from '../../styles/elements'
+import { Centered, CenteredCol, FlexCol, FlexRow, RowEnd, Spaced } from '../../styles/containers'
 
-const Login = ({ navigation }) => {
-    //const navigation = useNavigation()
-
-    const [username, setUsername] = useState('')
+const Signup1 = () => {
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     return (
@@ -18,7 +16,7 @@ const Login = ({ navigation }) => {
                     <Spaced>
                         <Centered>
                             <Logo 
-                                source={require('../../assets/flower-icon.png')} />
+                                source={require('../../../assets/flower-icon.png')} />
                             <Budding>Budding</Budding>
                         </Centered>
                         <Centered>
@@ -26,11 +24,11 @@ const Login = ({ navigation }) => {
                         </Centered>
                     </Spaced>
                     <Spaced>
-                        <Label>Username</Label>
+                        <Label>Email</Label>
                         <Input
-                            placeholder='username'
-                            value={username}
-                            onChangeText={setUsername}
+                            placeholder='Email'
+                            value={email}
+                            onChangeText={setEmail}
                         />
                         <Label>Password</Label>
                         <Input
@@ -39,24 +37,17 @@ const Login = ({ navigation }) => {
                             secureTextEntry
                             value={password}
                         />
-                        <LongButton 
-                            color={password.length > 8 && username.length > 3 ? '#425547' : '#9CADA4'}
-                            onPress={() => navigation.navigate('Home')}
-                        >
+                        <LongButton color={password.length > 8 && email.length > 5 ? '#425547' : '#9CADA4'}>
                             <ButtonText>Login</ButtonText>
                         </LongButton>
                         <RowEnd>
-                            <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
-                                <LinkText>Forgot Password?</LinkText>
-                            </Pressable>
+                            <LinkText>Forgot Password?</LinkText>
                         </RowEnd>
                     </Spaced>
                     <Spaced>
                         <FlexRow>
                             <BlackText>Not registered yet?</BlackText>
-                            <Pressable onPress={() => navigation.navigate('Signup1')}>
-                                <LinkText>Create an account</LinkText>
-                            </Pressable>
+                            <LinkText>Create an account</LinkText>
                         </FlexRow>
                     </Spaced>
                 </FlexCol>
@@ -64,4 +55,4 @@ const Login = ({ navigation }) => {
         </SafeAreaView>
     )
 }
-export default Login;
+export default Signup1;

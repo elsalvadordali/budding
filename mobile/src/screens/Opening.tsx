@@ -39,7 +39,7 @@ export default OpeningScreen
 
 
 const HomeImage = styled.Image`
-  height: 58%;
+  height: 62%;
   width: 100%;
 `
 
