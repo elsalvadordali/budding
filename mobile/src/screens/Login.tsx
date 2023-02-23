@@ -4,10 +4,12 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native"
 import { useState } from "react"
 import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText } from '../styles/elements'
 import { Centered, CenteredCol, FlexCol, FlexRow, RowEnd, Spaced } from '../styles/containers'
+import {useNavigation} from '@react-navigation/native';
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const navigation = useNavigation()
 
     return (
         <SafeAreaView>
@@ -47,7 +49,9 @@ const Login = () => {
                     <Spaced>
                         <FlexRow>
                             <BlackText>Not registered yet?</BlackText>
-                            <LinkText>Create an account</LinkText>
+                            <LinkText onPress={()=>navigation.navigate('Signup')}>
+                                Create an account
+                            </LinkText>
                         </FlexRow>
                     </Spaced>
                 </FlexCol>
