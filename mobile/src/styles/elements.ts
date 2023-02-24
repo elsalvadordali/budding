@@ -27,7 +27,7 @@ export const ButtonText = styled.Text`
 `
 export const Label = styled.Text`
   color: ${styles.colors.primary};
-  display: block;
+  //display: block;
   font-family: "Barlow-SemiBold";
   font-size: 16px;
   line-height: 28px;
@@ -45,12 +45,12 @@ export const Input = styled.TextInput`
   height: 48px;
   padding: 12px;
   placeholder: ${styles.colors.grey};
-  text-align: left
+  text-align: left;
   width: 80%;
 `
 export const Logo = styled.Image`
   background-color: ${styles.colors.primary};
-  border-radius: 50%;
+  //border-radius: 50%;
   height: 50px;
   padding: 6px;
   width: 50px;
@@ -58,7 +58,7 @@ export const Logo = styled.Image`
 `
 export const Budding = styled.Text`
 color: ${styles.colors.primary};
-display: block;
+//display: block;
 font-family: "Barlow-SemiBold";
 font-size: 50px;
 line-height: 54px;
@@ -66,7 +66,7 @@ padding: 4px;
 `
 export const SmallText = styled.Text`
 color: ${styles.colors.primary};
-display: block;
+//display: block;
 font-family: "Barlow-SemiBold";
 font-size: 16px;
 line-height: 16px;
@@ -74,15 +74,15 @@ padding: 6px 4px;
 `
 export const LinkText = styled.Text`
 color: ${styles.colors.linkGreen};
-display: block;
+//display: block;
 font-family: "Barlow-SemiBold";
 font-size: 16px;
 line-height: 16px;
 padding: 6px 4px;
 `
 export const BlackText = styled.Text`
-color: '#000';
-display: block;
+color: #000;
+//display: block;
 font-family: "Barlow-SemiBold";
 font-size: 16px;
 line-height: 16px;
