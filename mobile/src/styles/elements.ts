@@ -36,6 +36,17 @@ export const Label = styled.Text`
   width: 80%;
   margin-top: 12px;
 `
+export const Font40px = styled.Text`
+  color: ${styles.colors.primary};
+  display: block;
+  font-family: "Barlow-SemiBold";
+  font-size: 24px;
+  line-height: 28px;
+  padding: 4px;
+  text-align: left;
+  width: 80%;
+  margin-top: 12px;
+`
 export const Input = styled.TextInput`
   border: 1px solid ${styles.colors.grey};
   border-radius: 20px;
@@ -51,10 +62,22 @@ export const Input = styled.TextInput`
 export const Logo = styled.Image`
   background-color: ${styles.colors.primary};
   border-radius: 50%;
+  height: 36px;
+  padding: 6px;
+  width: 36px;
+`
+export const LargeIcon = styled.Image`
+  border-radius: 50%;
+  height: 130px;
+  padding: 6px;
+  width: 130px;
+`
+export const SmallLogo = styled.Image`
+  background-color: ${styles.colors.primary};
+  border-radius: 50%;
   height: 50px;
   padding: 6px;
   width: 50px;
-  
 `
 export const Budding = styled.Text`
 color: ${styles.colors.primary};

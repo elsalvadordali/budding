@@ -5,9 +5,34 @@ import { useState } from "react"
 import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText } from '../../styles/elements'
 import { Centered, CenteredCol, FlexCol, FlexRow, RowEnd, Spaced } from '../../styles/containers'
 
-const Signup1 = () => {
+const Signup1 = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+
+    // write a function that takes a string and verifies it is a valid email address
+
+    function validateEmail(email: string) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function validatePassword(password: string) {
+        return password.length > 8;
+    }
+
+    function validate() {
+        return validateEmail(email) && validatePassword(password);
+    }
+
+    function handleSubmit() {
+        if (validate()) {
+            navigation.navigate('Signup2')
+        }
+    }
+
+
+
 
     return (
         <SafeAreaView>
@@ -37,8 +62,11 @@ const Signup1 = () => {
                             secureTextEntry
                             value={password}
                         />
-                        <LongButton color={password.length > 8 && email.length > 5 ? '#425547' : '#9CADA4'}>
-                            <ButtonText>Login</ButtonText>
+                        <LongButton 
+                            color={password.length > 8 && email.length > 5 ? '#425547' : '#9CADA4'}
+                            onPress={() => navigation.navigate('Signup2')}
+                        >
+                            <ButtonText>Continue</ButtonText>
                         </LongButton>
                         <RowEnd>
                             <LinkText>Forgot Password?</LinkText>
