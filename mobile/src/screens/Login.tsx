@@ -4,7 +4,7 @@ import { Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from "reac
 import { useState } from "react"
 import * as SecureStore from 'expo-secure-store'
 import PocketBase from 'pocketbase'
-import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText } from '../styles/elements'
+import { BlackText, Budding, LongButton, ButtonText, Input, Label, Logo, LinkText, SmallText, ErrorMessage } from '../styles/elements'
 import { Centered, CenteredCol, FlexCol, FlexRow, RowEnd, Spaced } from '../styles/containers'
 
 const Login = ({ navigation }) => {
@@ -15,8 +15,8 @@ const Login = ({ navigation }) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState({username: "", password: ""})
 
-   
     //const [token, setToken] = useState(pb.authStore.token);
     const [user, setUser] = useState(new PocketBase('https://pb.tijana.me'));
 
@@ -43,19 +43,24 @@ const Login = ({ navigation }) => {
                         </Centered>
                     </Spaced>
                     <Spaced>
-                        <Label>Username {user.authStore.isValid.toString()}</Label>
+                        <Label>Username</Label>
                         <Input
                             placeholder='username'
                             value={username}
                             onChangeText={setUsername}
+                            onBlur={() => {setError(username.length < 4 ? {...error, username: "Username must be at least 4 characters long" } : {...error, username: ""})}}
                         />
+                        <ErrorMessage>{error.username}</ErrorMessage>
                         <Label>Password</Label>
                         <Input
                             onChangeText={setPassword}
                             placeholder='Password'
                             secureTextEntry
                             value={password}
+                            onBlur={() => {setError(password.length < 8 ? {...error, password: "Password should be 8 characters or longer"} : {...error, username: "" })}}
+
                         />
+                        <ErrorMessage></ErrorMessage>
                         <LongButton 
                             color={password.length > 8 && username.length > 3 ? '#425547' : '#9CADA4'}
                             onPress={() => authenticateUser('test@me.com', 'abcabcabc')}

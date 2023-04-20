@@ -11,7 +11,7 @@ export const ShortButton = styled.Pressable`
 `
 //must declare color for each Button though, based on state. See Login
 export const LongButton = styled.Pressable`
-  background-color: ${props => props.color};
+  background-color: ${props => props.color };
   border-radius: 20px;
   font-size: 16px;
   height: 48px;
@@ -110,4 +110,8 @@ font-family: "Barlow-SemiBold";
 font-size: 16px;
 line-height: 16px;
 padding: 6px 4px;
+`
+export const ErrorMessage = styled.Text`
+color: ${styles.colors.red};
+padding: 4px;
 `
